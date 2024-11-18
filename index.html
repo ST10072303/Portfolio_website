@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Portfolio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  backgroud-color: #f5f6f7;
+  
+}
+/* Style the header */
+header {
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  
+}
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 15%;
+  height: auto;
+ /* background: #ccc;*/
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+article {
+  float: left;
+  padding: 20px;
+  width: auto;
+  background-color: #f1f1f1;
+  height: auto; 
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+  .image-left {
+      float: left; /* This will float the image to the left */
+      margin-right: 15px;
+      border-radius: 100%; /* Make the image circular */
+      object-fit: cover;
+  }
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 10s forwards;
+       
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+  .p1 {
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+  .p2 {
+  font-family: "Lucida Console", "Courier New", monospace;
+   font-size: 16px;
+}
+  .p3 {
+  font-family: "Lucida Console", "Courier New", monospace;
+  text-align: center;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: red;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 70px;
+ /* font-weight: bold;*/
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column2 {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column2 img {
+  opacity: 0.8; 
+  cursor: pointer; 
+}
+
+.column2 img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container */
+.containers {
+  position: relative;
+  display: none;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: red;
+  font-size: 35px;
+  cursor: pointer;
+}
+.dev {
+        
+        max-width: 600px; /* Maximum width */
+        margin: 20px auto; /* Center the container with top/bottom margin */
+        padding: 20px; /* Add space inside the container */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        
+    }
+    
+  .link{
+  background-color: white;
+  color: black;
+  border: 2px solid red;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: blue;
+  color: white;
+}
+
+ /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<header>  
+  <div class="jumbotron text-center">
+   
+  <h2 class="p1">I am</h2>
+  <h1 class="fade-in">Malesela Phineas Ngoasheng</h1>
+  <h2 class="p1">A Software Developer graduate</h2> 
+</div>
+    
+</header>
+
+<section>
+  <nav>   
+       <h3 class="p1">Contact Me</h3>
+       <table>
+  <tr>
+    <td><a target="_blank" class="material-icons" style="font-size:36px;color:#007cff">email</a></td>
+ 	<td class="p1">mrphineas1104@gmail.com</td>
+   </tr>
+   
+    <tr>
+    <td><a  target="_blank" class="material-icons" style="font-size:36px">phone_android</a></td>
+    <td class="p1">+27 67 170 3782</td>
+   </tr>
+   
+  <tr>
+    <td><a href="https://maps.app.goo.gl/hbzTV5yCK3dt98Nf8" target="_blank" class="material-icons" style="font-size:36px;color:green">home</a></td>
+    <td class="p1">13 Read Avenue<br>Pretoria <br>0002</td>
+
+   </tr>     
+        </table><br><br><br>
+ <table>
+
+  <tr>
+    <td><a href="https://www.facebook.com/yourprofile" target="_blank" class="fa fa-facebook-official" style="font-size:36px;color:blue"></a></td>
+     <td>---</td>
+    <td><a href="https://www.instagram.com//phineas_theend" target="_blank" class="fa fa-instagram" style="font-size:36px;color:#ff0000"></a></td>
+     <td>---</td>
+    <td><a href="https://www.linkedin.com/in/malesela-ngoasheng-483a4a24b" target="_blank" class="fa fa-linkedin-square" style="font-size:36px;color:blue"></a></td>
+     <td>---</td>
+     <td><a href="https://github.com/ST10072303" target="_blank" class="fa fa-github" style="font-size:36px"></a></td>
+  </tr>
+ 
+ </table><br><br>
+        <a class="link" href="https://github.com/ST10072303/My_CV/blob/main/M_Ngoasheng_CV.pdf" target="_blank">Download CV</a>
+
+  </nav>
+
+  <article>
+      <img src="images/half.jpg"  class="image-left" width="350" height="400">
+    <h1 class="p1">About Me</h1>
+    <p class="p2">I am a recent graduate with a Diploma in Information Technology, specializing<br> in Software Development.
+       My academic background has equipped me with strong <br>programming skills in Java, Kotlin, php, and C#, as well as proficiency
+        in web <br>development technologies, including HTML, CSS, JavaScript, and Bootstrap. I have <br>a particular expertise in SQL
+         databases, excelling in designing, managing, and <br>optimizing database systems, and I am passionate about building
+          a career in SQL<br> database development and management.</p> 
+
+          <p class="p2">I also have a talent for website design and development, making web development<br> a 
+       secondary career option. I am curretly seeking internship opportunities<br> where I can apply my knowledge, contribute to real-world
+        projects, and further develop my skills as a software developer.</p>
+    
+  </article><br><br>
+     
+</section>
+    
+    <div class="container">     
+  <div class="row">
+      <h1 class="p3"><b>Skills</b></h1>
+    <div class="col-sm-4"> 
+        <h3 class="p1"><b>Web Development</b></h3>
+      <img src="images/webskills.PNG" width="250" height="100"><br>
+      <p class="p2">Designing, building and maintaining websites and web applications,
+          ensuring they are functional, user-friendly, and visually appealing.</p>
+      
+    </div>
+    <div class="col-sm-4">
+      <h3 class="p1"><b>SQL Database</b></h3>
+      <img src="images/sqklskill.PNG" width="230" height="100">
+      <p class="p2">Designing, managing, and optimizing SQL databases, including MySQL and SQL Server. Writing complex
+          queries, administering relational databases, and ensuring data integrity and security.</p>
+    </div>
+    <div class="col-sm-4">
+      <h3 class="p1"><b>Java Programming Language</b></h3>  
+    <img src="images/javaskill.PNG" width="180" height="80">      
+      <p class="p2">Writing clean, modular code using Java’s OOP principles such as inheritance,
+          polymorphism, and encapsulation to create efficient and maintainable solutions.</p>     
+    </div><br>
+    </div>
+</div>
+    
+     <div class="container">     
+  <div class="row">
+    <div class="col-sm-4"> 
+      <h3 class="p1"><b>C# Programming Language</b></h3>
+      <img src="images/cskill.PNG" width="200" height="110">   
+      <p class="p2">C# within the .NET framework, to build efficient, scalable, and secure applications.
+          Working with OOP principles and event-driven programming.</p>
+    
+    </div>
+    <div class="col-sm-4">
+        <h3><b>UI and UX Design</b></h3>
+        <img src="images/designskill.PNG" width="210" height="110">
+      <p class="p2">User Interface and User Experience designs. Creating intuitive, appealing, and
+          user-centered digital experiences.</p>
+      
+    </div>
+    <div class="col-sm-4">
+        <h3 class="p1"><b>IT Project Management</b></h3> 
+        <img src="images/projectskill.PNG" width="230" height="110">   
+      <p class="p2">Planning, organizing, and overseeing the successful execution of software development projects.
+      Coordinating teams, managing timelines, and ensuring that project objectives are met within scope and budget.</p>
+    </div><br>
+    </div>
+</div>
+    
+     <div class="container">     
+  <div class="row">
+    <div class="col-sm-4"> 
+      <h3 class="p1"><b>Android App Development</b></h3>
+      <img src="images/appskill.PNG" width="200" height="110">   
+      <p class="p2">Building mobile applications using Android Studio and the Kotlin programming language.
+      Working with APIs like Mapbox to integrate mapping and location-based services. Making use of realtime 
+      database for data and information storage</p>
+    
+    </div>
+    <div class="col-sm-4">
+        <h3><b>Azure DevOps</b></h3>
+        <img src="images/devskill.PNG" width="250" height="110">
+      <p class="p2">Utilizing Azure Boards for tracking project progress, managing work items,
+          and implementing Agile methodologies to enhance team productivity and project visibility. 
+      Managing source control through Azure Repos, facilitating collaboration among team members.</p>
+      
+    </div>
+    <div class="col-sm-4">
+        <h3 class="p1"><b>Microsoft Office</b></h3> 
+        <img src="images/officeskill.PNG" width="230" height="110">   
+      <p class="p2">Creating and formatting documents, utilizing features 
+          like styles, templates, and collaboration tools for effective communication. With Excel,
+          data analysis, employing formulas, pivot tables, and charts to manipulate
+          and visualize data for informed decision-making. In PowerPoint, designing presentations,
+          incorporating multimedia elements and effective layouts to convey information clearly and captivate audiences.</p>
+    </div><br>
+    </div>
+   </div><br>
+   
+     <h1 class="p3"><b>Projects</b></h1>
+     <h2 class="p3"><b>Mankweng Gateway Clinic Website</b></h2>
+
+<div class="row">
+
+  <div class="column">
+    <img src="images/p2.png" style="width:90%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="images/p3.png" style="width:90%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="images/p4.png" style="width:90%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+    <div class="column">
+    <img src="images/p5.png" style="width:90%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="images/p2.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="images/p3.png" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="images/p4.png" style="width:100%">
+    </div>
+      
+       <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="images/p5.png" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+    <div class="column">
+      <img class="demo cursor" src="images/p2.png" style="width:100%" onclick="currentSlide(1)" >
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/p3.png" style="width:100%" onclick="currentSlide(2)" >
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/p4.png" style="width:100%" onclick="currentSlide(3)" >
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/p5.png" style="width:100%" onclick="currentSlide(4)" >
+    </div>
+  </div>
+</div>
+   <script>
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script><br><br>
+
+<h2 class="p3"><b>Mankweng Gateway Clinic Mobile Application</b></h2>
+<!-- The four columns -->
+<div class="row">
+  <div class="column2">
+    <img src="images/mapp1.png" style="width:80%" onclick="myFunction(this);">
+  </div>
+  <div class="column2">
+    <img src="images/mapp2.png" style="width:80%" onclick="myFunction(this);">
+  </div>
+  <div class="column2">
+    <img src="images/mapp3.png" style="width:80%" onclick="myFunction(this);">
+  </div>
+  <div class="column2">
+    <img src="images/mapp4.png" style="width:80%" onclick="myFunction(this);">
+  </div>
+</div>
+
+<div class="containers">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
+}
+</script><br><br>
+
+
+<footer>
+  <h3>Visit My GitHup Profile To View for More Projects</h3>
+</footer>
+
+</body>
+</html>
+
